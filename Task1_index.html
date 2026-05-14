@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>VULLI VEERA DEVI KRISHNA SADWIKA | Full Stack Developer</title>
+
+  <meta name="description"
+    content="Professional Full Stack Developer Portfolio with projects, internships, skills, and coding profiles." />
+
+  <!-- Google Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:#f8fafc;
+      line-height:1.7;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.5rem;
+      margin-bottom:50px;
+      color:#60a5fa;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      background:#111827;
+      padding:18px 0;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .nav-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:#60a5fa;
+    }
+
+    .nav-links{
+      display:flex;
+      list-style:none;
+      gap:22px;
+    }
+
+    .nav-links a{
+      transition:0.3s;
+      font-size:0.95rem;
+    }
+
+    .nav-links a:hover{
+      color:#60a5fa;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding-top:80px;
+      background:linear-gradient(to right,#0f172a,#111827);
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      margin-bottom:20px;
+    }
+
+    .hero span{
+      color:#60a5fa;
+    }
+
+    .hero p{
+      max-width:800px;
+      margin:auto;
+      color:#cbd5e1;
+      margin-bottom:30px;
+      font-size:1.05rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      background:#60a5fa;
+      color:black;
+      border-radius:8px;
+      font-weight:600;
+      margin:10px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      background:#3b82f6;
+      color:white;
+    }
+
+    /* SOCIALS */
+
+    .socials{
+      margin-top:30px;
+    }
+
+    .socials a{
+      margin:0 12px;
+      font-size:1.5rem;
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      color:#60a5fa;
+    }
+
+    /* ABOUT */
+
+    .about-content{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .about-text p{
+      color:#cbd5e1;
+      margin-bottom:18px;
+    }
+
+    /* SKILLS */
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:25px;
+    }
+
+    .skill{
+      padding:10px 18px;
+      border-radius:30px;
+      background:#1e293b;
+      border:1px solid #60a5fa;
+      transition:0.3s;
+    }
+
+    .skill:hover{
+      background:#60a5fa;
+      color:black;
+    }
+
+    /* GRID */
+
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:28px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:12px;
+      transition:0.3s;
+      border:1px solid transparent;
+    }
+
+    .project-card:hover{
+      transform:translateY(-8px);
+      border:1px solid #60a5fa;
+    }
+
+    .project-card h3{
+      color:#60a5fa;
+      margin-bottom:15px;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+      margin-bottom:20px;
+    }
+
+    /* CONTACT */
+
+    .contact-container{
+      max-width:700px;
+      margin:auto;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    input,
+    textarea{
+      padding:15px;
+      border:none;
+      border-radius:8px;
+      background:#1e293b;
+      color:white;
+      outline:none;
+      font-size:1rem;
+    }
+
+    textarea{
+      resize:none;
+      height:150px;
+    }
+
+    button{
+      border:none;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111827;
+      text-align:center;
+      padding:25px 0;
+      color:#94a3b8;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      .nav-links{
+        gap:12px;
+        font-size:0.85rem;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-container">
+
+      <div class="logo">VULLI VEERA DEVI KRISHNA SADWIKA</div>
+
+      <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#internships">Internships</a></li>
+
+        <li><a href="#education">Education</a></li>
+
+        <li><a href="#coding-profiles">Coding</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="container">
+
+      <h1>Hello, I'm <span>Sadwika Vulli</span></h1>
+
+      <p>
+        Computer Science Engineering student and Full Stack Web Developer
+        passionate about building responsive and user-friendly web applications.
+      </p>
+
+      <a href="#projects" class="btn">
+        View Projects
+      </a>
+
+      <a href="resume.pdf" download class="btn">
+        Download Resume
+      </a>
+
+      <!-- SOCIALS -->
+
+      <div class="socials">
+
+        <a href="https://github.com/25a35a0511" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/vulli-veera-devi-krishna-sadwika-203184315/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://leetcode.com/u/25a35a0511/" target="_blank">
+          <i class="fa-solid fa-code"></i>
+        </a>
+
+        <a href="https://www.hackerrank.com/profile/25a35a0511" target="_blank">
+          <i class="fab fa-hackerrank"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-content">
+
+        <div class="about-text">
+
+          <p>
+            Computer Science Engineering student with experience in building
+            4+ web development projects using HTML5, CSS3, JavaScript, and ReactJS.
+          </p>
+
+          <p>
+            Skilled in creating responsive, user-friendly interfaces with
+            clean UI design and problem-solving approaches.
+          </p>
+
+          <p>
+            Seeking opportunities to apply technical skills in real-world
+            development roles and contribute to impactful projects.
+          </p>
+
+          <!-- SKILLS -->
+
+          <div class="skills">
+
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">ReactJS</div>
+            <div class="skill">Bootstrap</div>
+            <div class="skill">REST API</div>
+            <div class="skill">Responsive Design</div>
+            <div class="skill">SEO</div>
+
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">C</div>
+
+            <div class="skill">MongoDB</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Oracle</div>
+
+            <div class="skill">Git</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">VS Code</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+
+          <h3>CarbonX – Carbon Credit Marketplace</h3>
+
+          <p>
+            Built a responsive platform with 5+ UI components
+            for carbon credit transactions using HTML, CSS,
+            and JavaScript.
+          </p>
+
+          <a href="https://github.com/25a35a0511" class="btn">
+            GitHub
+          </a>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>Complaint Escalation System</h3>
+
+          <p>
+            Implemented keyword-based complaint prioritization
+            and dashboard tracking using MongoDB and JavaScript.
+          </p>
+
+          <a href="https://github.com/25a35a0511" class="btn">
+            GitHub
+          </a>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>Electricity Consumption Dashboard</h3>
+
+          <p>
+            Developed an energy monitoring dashboard for
+            electricity cost analysis using Python and web technologies.
+          </p>
+
+          <a href="https://github.com/25a35a0511" class="btn">
+            GitHub
+          </a>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>CampusGuide – Smart Navigation System</h3>
+
+          <p>
+            Designed a smart navigation system with multi-location
+            search functionality and user-friendly interface.
+          </p>
+
+          <a href="https://github.com/25a35a0511" class="btn">
+            GitHub
+          </a>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>Blood Bank Management System</h3>
+
+          <p>
+            A web-based Blood Bank Management System built with Django
+            to manage blood donation, requests, and inventory tracking.
+          </p>
+
+          <a href="https://github.com/25a35a0511" class="btn">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INTERNSHIPS -->
+
+  <section id="internships">
+
+    <div class="container">
+
+      <h2 class="section-title">Internships</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+
+          <h3>Full Stack Development Intern</h3>
+
+          <p>
+            Technical Hub, Aditya University <br><br>
+
+            Completed hands-on training in HTML, CSS,
+            Bootstrap, JavaScript, and React.
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>1M1B Green Intern</h3>
+
+          <p>
+            Contributed to sustainability initiatives and
+            digital campaigns supporting outreach activities.
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>ServiceNow Virtual Intern</h3>
+
+          <p>
+            Working on workflows and forms for
+            process automation using ServiceNow.
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+        <h3>Full Stack Web Development Intern</h3>
+
+        <p>
+          Future Interns | Present<br><br>
+
+          Working on real-world portfolio development tasks including
+          responsive UI design, project structuring, and full stack web development practices.
+        </p>
+
+      </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+
+    <div class="container">
+
+      <h2 class="section-title">Education</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+
+          <h3>B.Tech - CSE</h3>
+
+          <p>
+            Pragati Engineering College, Surampalem <br>
+            CGPA: 9.03
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>Diploma</h3>
+
+          <p>
+            Aditya College of Engineering and Technology <br>
+            Percentage: 97.88%
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>SSC</h3>
+
+          <p>
+            Little Soldiers EM School <br>
+            Percentage: 96.16%
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CERTIFICATES -->
+
+  <section id="certificates">
+
+    <div class="container">
+
+      <h2 class="section-title">Certificates</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <h3>AI Skills Passport</h3>
+          <p>EY & Microsoft</p>
+        </div>
+
+        <div class="project-card">
+          <h3>ServiceNow Micro-Certification</h3>
+          <p>Welcome to ServiceNow</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Java Programming</h3>
+          <p>Infosys Springboard</p>
+        </div>
+
+        <div class="project-card">
+          <h3>HTML & CSS</h3>
+          <p>Information Technology Specialist</p>
+        </div>
+
+        <div class="project-card">
+          <h3>IBM SkillsBuild</h3>
+          <p>Vibe Coding</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Certificate of Merit</h3>
+          <p>Naukri Campus Young Turks Exam</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CODING PROFILES -->
+
+  <section id="coding-profiles">
+
+    <div class="container">
+
+      <h2 class="section-title">Coding Profiles</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+
+          <h3>LeetCode</h3>
+
+          <p>
+            Practicing Data Structures & Algorithms and improving
+            problem-solving skills through coding challenges.
+          </p>
+
+          <a href="https://leetcode.com/YOUR_USERNAME"
+            target="_blank"
+            class="btn">
+
+            View Profile
+
+          </a>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>HackerRank</h3>
+
+          <p>
+            Solved programming challenges in Java,
+            Python, and problem-solving domains.
+          </p>
+
+          <a href="https://www.hackerrank.com/YOUR_USERNAME"
+            target="_blank"
+            class="btn">
+
+            View Profile
+
+          </a>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>GitHub</h3>
+
+          <p>
+            Explore my repositories, projects, and development work
+            across web development and programming.
+          </p>
+
+          <a href="https://github.com/YOUR_USERNAME"
+            target="_blank"
+            class="btn">
+
+            View GitHub
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <h2 class="section-title">Contact Me</h2>
+
+      <div class="contact-container">
+
+        <form id="contactForm">
+
+          <input type="text"
+            placeholder="Your Name"
+            required>
+
+          <input type="email"
+            placeholder="Your Email"
+            required>
+
+          <textarea
+            placeholder="Your Message"></textarea>
+
+          <button class="btn" type="submit">
+
+            Send Message
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 Your Name. All Rights Reserved.
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      alert("Message Sent Successfully!");
+
+      form.reset();
+
+    });
+
+  </script>
+
+</body>
+
+</html>
