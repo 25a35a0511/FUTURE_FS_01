@@ -273,8 +273,38 @@
     }
 
     /* RESPONSIVE */
+    .menu-toggle{
+  display:none;
+  font-size:1.6rem;
+  cursor:pointer;
+  color:white;
+}
 
-    @media(max-width:768px){
+/* MOBILE VIEW */
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:#111827;
+    width:200px;
+    flex-direction:column;
+    display:none;
+    padding:20px;
+    gap:15px;
+    border-radius:8px;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+}
+@media(max-width:768px){
   section{
     padding:60px 15px;
   }
@@ -293,6 +323,7 @@
     right:0;
   }
 }
+
     @media(max-width:768px){
 
       .hero h1{
@@ -313,38 +344,41 @@
   </style>
 
 </head>
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
 <body>
 
   <!-- NAVBAR -->
 
   <nav>
+  <div class="container nav-container">
 
-    <div class="container nav-container">
+    <div class="logo">VULLI VEERA DEVI KRISHNA SADWIKA</div>
 
-      <div class="logo">VULLI VEERA DEVI KRISHNA SADWIKA</div>
-
-      <ul class="nav-links">
-
-        <li><a href="#home">Home</a></li>
-
-        <li><a href="#about">About</a></li>
-
-        <li><a href="#projects">Projects</a></li>
-
-        <li><a href="#internships">Internships</a></li>
-
-        <li><a href="#education">Education</a></li>
-
-        <li><a href="#coding-profiles">Coding</a></li>
-
-        <li><a href="#contact">Contact</a></li>
-
-      </ul>
-
+    <!-- HAMBURGER ICON -->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
     </div>
 
-  </nav>
+    <!-- NAV LINKS -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#internships">Internships</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#coding-profiles">Coding</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
 
   <!-- HERO -->
 
@@ -725,7 +759,7 @@
             problem-solving skills through coding challenges.
           </p>
 
-          <a href="https://leetcode.com/YOUR_USERNAME"
+          <a href="https://leetcode.com/u/25a35a0511"
             target="_blank"
             class="btn">
 
@@ -744,7 +778,7 @@
             Python, and problem-solving domains.
           </p>
 
-          <a href="https://www.hackerrank.com/YOUR_USERNAME"
+          <a href="https://www.hackerrank.com/profile/25a35a0511"
             target="_blank"
             class="btn">
 
@@ -763,7 +797,7 @@
             across web development and programming.
           </p>
 
-          <a href="https://github.com/YOUR_USERNAME"
+          <a href="https://github.com/25a35a0511"
             target="_blank"
             class="btn">
 
